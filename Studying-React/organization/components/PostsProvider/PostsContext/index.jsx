@@ -2,7 +2,7 @@ import React from 'react'
 import { createContext, useReducer } from 'react'
 
 import { reducer } from '/Studying-React/organization/components/PostsProvider/reducer/index.jsx'
-import { dataPosts } from '/Studying-React/organization/components/PostsProvider/dataPosts.jsx/index.jsx'
+import { dataPosts } from '/Studying-React/organization/components/PostsProvider/dataPosts/index.jsx'
 
 export const Context = createContext()
 
