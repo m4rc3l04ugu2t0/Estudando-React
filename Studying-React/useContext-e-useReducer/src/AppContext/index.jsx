@@ -2,7 +2,7 @@ import React from 'react'
 
 import { createContext, useReducer } from 'react'
 
-import { globalState } from '/Estudando-React/useContext-e-useReducer/globalState/index.jsx'
+import { globalState } from '/Studying-React/useContext-e-useReducer/globalState/index.jsx'
 
 export const Context = createContext()
 

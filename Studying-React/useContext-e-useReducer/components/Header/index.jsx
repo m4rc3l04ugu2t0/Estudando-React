@@ -2,8 +2,8 @@ import React from 'react'
 
 import { useContext } from 'react'
 
-import { Context } from '/Estudando-React/useContext-e-useReducer/src/AppContext/index.jsx'
-import { actions } from '/Estudando-React/useContext-e-useReducer/actions/index.jsx'
+import { Context } from '/Studying-React/useContext-e-useReducer/src/AppContext/index.jsx'
+import { actions } from '/Studying-React/useContext-e-useReducer/actions/index.jsx'
 
 export const Header = () => {
   const theContext = useContext(Context)
