@@ -15,8 +15,16 @@ export const Posts = () => {
   return (
     <div>
       <h1>Posts</h1>
+      { postsState.loading &&
+      <p><strong>Carregando posts...</strong></p> }
+      
       { postsState.posts.map(post => {
-        return <h2 key={ post.id }>{ post.title }</h2>
+        return (
+          <div key={ post.id }>
+            <h2>{ post.title }</h2>
+            <p>{ post.body }</p>
+          </div>
+        )
       })}
     </div>  
   )

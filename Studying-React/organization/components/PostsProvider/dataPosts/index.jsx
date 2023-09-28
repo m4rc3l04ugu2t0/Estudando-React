@@ -1,3 +1,4 @@
 export const dataPosts = {
-  posts: []
+  posts: [],
+  loading: false
 }
