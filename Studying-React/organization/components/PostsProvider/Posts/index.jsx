@@ -33,10 +33,10 @@ export const Posts = () => {
       <h1>Posts</h1>
       
       <button onClick={ () => incrementCounter(setStateCounter) }>
-      { stateCounter.counter }</button>
+      +{ stateCounter.counter }</button>
       
       <button onClick={ () => decrementCounter(setStateCounter) }>
-      { stateCounter.counter }</button>
+      -{ stateCounter.counter }</button>
       
       { postsState.loading &&
       <p><strong>Carregando posts...</strong></p> }

@@ -10,7 +10,7 @@ export const ContextCounter = ({ children }) => {
   const [ stateCounter , setStateCounter ] = useReducer(reducer, counterData )
   
   return (
-    <TheContextCounter.Provider value={ stateCounter, setStateCounter } >
+    <TheContextCounter.Provider value={{ stateCounter, setStateCounter }} >
       { children }
     </TheContextCounter.Provider>
   )
