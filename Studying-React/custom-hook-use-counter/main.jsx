@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { App } from '/Studying-React/creatingHook 2/App.jsx'
+import { App } from '/Studying-React/custom-hook-use-counter/templates/App/index.jsx'
 
 ReactDOM.render (
   <React.StrictMode>
