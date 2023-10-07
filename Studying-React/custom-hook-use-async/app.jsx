@@ -27,7 +27,7 @@ const useAsync = (asyncFunction, shoudRun) => {
         setState({
           result: null,
           error: err,
-          status: 'error'
+          status: 'err'
         })
       })
   }, [asyncFunction])
@@ -53,19 +53,15 @@ export const App = () => {
   
   const handleClickPosts = () => refetchData()
   
-  if (status === 'idle') {
-    return <p>Nada executando!</p>
+  const statusMsg = {
+    idle: `Nada executando!`,
+    panding: `esperando...`,
+    err: 'Nenhum posts encontrado!'
   }
+
+  return <pre onClick={ handleClickPosts }> { statusMsg[status] ||  JSON.stringify(result, null, 2) }</pre>
   
-  if (status === 'pending') {
-    return <p>esperando...</p>
-  }
-  
-  if (status === 'error') {
-    return <p>{ console.warn(error.message) } Sem posts!</p>
-  }
-  
-  if (status === 'settled') {
-    return <pre onClick={ handleClickPosts }>{ JSON.stringify(result, null, 2) }</pre>
-  }
+  return (
+    <div>Olá 👋</div>
+  )
 }
