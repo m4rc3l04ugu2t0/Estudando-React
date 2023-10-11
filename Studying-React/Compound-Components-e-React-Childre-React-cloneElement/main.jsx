@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Children, cloneElement, useState } from 'react'
+import { Children, cloneElement, useState, useContext,  createContext } from 'react'
 
 const stylesheet = {
   style: {
@@ -8,28 +8,27 @@ const stylesheet = {
   }
 }
 
+const TurnOnOffContext = createContext()
+
 const TurnOnOff = ({ children }) => {
   const [ isOn, setIsOn ] = useState(false)
   const onTurn = () => setIsOn(prevState => !prevState)
   
-  return Children.map(children, child => {
-    const newChild = cloneElement(child, {
-      isOn, onTurn
-    })
-    return newChild
-  })
+  return <TurnOnOffContext.Provider value={{ isOn, onTurn }}>{ children }</TurnOnOffContext.Provider>
 }
 
-const TurnedOn = ({ isOn, children }) => {
+const TurnedOn = ({ children }) => {
+  const { isOn } = useContext(TurnOnOffContext)
   return isOn ? children : null
 }
 
-const TurnedOff = ({ isOn, children }) => {
+const TurnedOff = ({ children }) => {
+  const { isOn } = useContext(TurnOnOffContext)
   return isOn ? null : children
 }
 
-const TurnButton = ({ isOn, onTurn, ...props }) => {
-  console.log(props)
+const TurnButton = ({ ...props }) => {
+   const { isOn, onTurn } = useContext(TurnOnOffContext)
   return <button onClick={ onTurn } { ...props }>Turn { isOn ? 'OFF' : 'ON' }</button>
 }
 
